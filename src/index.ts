@@ -1,10 +1,11 @@
 import dotenv from 'dotenv';
 import express from 'express';
-import bodyParser from 'body-parser';
+import morgan from 'morgan';
 
 const api = express();
 
-api.use(bodyParser.json());
+api.use(morgan('tiny'));
+api.use(express.json());
 
 dotenv.config();
 
