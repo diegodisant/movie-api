@@ -10,7 +10,11 @@ export interface IBaseService<Entity extends BaseEntity> {
 }
 
 export abstract class BaseService<Entity extends BaseEntity> implements IBaseService<Entity> {
-  constructor(private repository: IBaseRepository<Entity>) {}
+  private repository: IBaseRepository<Entity>;
+
+  constructor(repository: IBaseRepository<Entity>) {
+    this.repository = repository;
+  }
 
   async getAll(): Promise<Entity[]> {
     return await this.repository.all();

@@ -15,7 +15,11 @@ export interface IBaseController {
 }
 
 export abstract class BaseController<Entity extends BaseEntity> implements IBaseController {
-  constructor(private service: BaseService<Entity>) {}
+  private service: BaseService<Entity>;
+
+  constructor(service: BaseService<Entity>) {
+    this.service = service;
+  }
 
   async all(req: Request, res: Response): Promise<void> {
     const items = await this.service.getAll();
@@ -125,7 +129,7 @@ export abstract class BaseController<Entity extends BaseEntity> implements IBase
       wasDeleted = await this.service.remove(id);
     } catch (err) {
       const apiError = ApiError.fromError(err as Error);
-      const errMessage = `unable to delete an item with id: ${id}, due to unexpected error`,
+      const errMessage = `unable to delete an item with id: ${id}, due to unexpected error`;
       const apiErrorResponse: ApiResponse = {
         message: errMessage,
         data: {

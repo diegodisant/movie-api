@@ -1,5 +1,11 @@
-import express from 'express';
+import { Movie } from "../../database/entity/Movie";
+import { MovieController } from "../controller/MovieController";
+import { BaseRouter } from "./BaseRouter";
 
-const router = express.Router();
+export class MovieRouter extends BaseRouter<Movie> {
+  name: string = 'movie-api';
 
-//@TODO: define router paths
+  constructor() {
+    super(new MovieController());
+  }
+}
