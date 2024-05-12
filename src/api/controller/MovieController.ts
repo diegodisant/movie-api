@@ -6,5 +6,4 @@ export class MovieController extends BaseController<Movie> {
   constructor() {
     super(new MovieService());
   }
-  
 }
