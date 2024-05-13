@@ -13,6 +13,8 @@ const {
   NODE_ENV
 } = process.env;
 
+console.log(DB_USER);
+
 const isProduction = NODE_ENV === 'production';
 const sourceDir = isProduction ? 'build' : 'src';
 

@@ -1,11 +1,18 @@
-import { Movie } from "../../database/entity/Movie";
-import { MovieController } from "../controller/MovieController";
-import { BaseRouter } from "./BaseRouter";
+import express from 'express';
+import {
+  all,
+  one,
+  create,
+  update,
+  remove
+} from '../controller/MovieController';
 
-export class MovieRouter extends BaseRouter<Movie> {
-  name: string = 'movie-api';
+const router = express.Router();
 
-  constructor() {
-    super(new MovieController());
-  }
-}
+router.get('/', all);
+router.get('/:id', one);
+router.post('/', create);
+router.patch('/:id', update);
+router.delete('/:id', remove);
+
+export default router;

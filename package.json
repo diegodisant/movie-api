@@ -3,13 +3,13 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon src/index.ts",
+    "dev": "nodemon ./index.ts",
     "build": "rimraf ./build && tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint . --ext .ts",
     "typeorm:cli": "ts-node ./node_modules/typeorm/cli",
-    "db:migrations": "npm run typeorm:cli -- migration:run -d ./ormsource.ts",
-    "db:revert-migrations": "npm run typeorm:cli -- migration:revert -d ./ormsource.ts",
+    "db:migrations": "npm run typeorm:cli -- migration:run -d ./data-source.ts",
+    "db:revert-migrations": "npm run typeorm:cli -- migration:revert -d ./data-source.ts",
     "db:add-migration": "npm run typeorm:cli -- migration:create ./src/database/migrations/"
   },
   "keywords": [],
