@@ -4,7 +4,7 @@ import {
   one,
   create,
   update,
-  remove
+  remove,
 } from '../controller/MovieController';
 
 const router = express.Router();

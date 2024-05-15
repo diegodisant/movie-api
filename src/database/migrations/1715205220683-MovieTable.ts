@@ -1,8 +1,8 @@
-import { MigrationInterface, QueryRunner } from "typeorm";
+import { MigrationInterface, QueryRunner } from 'typeorm';
 
 export class MovieTable1715205220683 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
-   await queryRunner.query(`
+    await queryRunner.query(`
       CREATE TABLE IF NOT EXISTS movie (
         id SERIAL PRIMARY KEY,
         title VARCHAR(100) NOT NULL,

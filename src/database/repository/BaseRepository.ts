@@ -1,4 +1,4 @@
-import { BaseEntity } from "typeorm";
+import { BaseEntity } from 'typeorm';
 
 export interface IBaseRepository<Entity extends BaseEntity> {
   all(): Promise<Entity[]>;

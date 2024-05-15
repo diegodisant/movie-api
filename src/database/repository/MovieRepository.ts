@@ -1,8 +1,8 @@
-import { Service } from "typedi";
-import { Movie } from "../entity/Movie";
-import { IBaseRepository } from "./BaseRepository";
+import { Service } from 'typedi';
+import { Movie } from '../entity/Movie';
+import { IBaseRepository } from './BaseRepository';
 
-export interface IMovieRepository extends IBaseRepository<Movie> {};
+export interface IMovieRepository extends IBaseRepository<Movie> {}
 
 @Service()
 export class MovieRepository implements IMovieRepository {

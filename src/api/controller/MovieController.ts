@@ -1,10 +1,10 @@
-import { Movie } from "../../database/entity/Movie";
-import { MovieService } from "../../database/service/MovieService";
-import {Request, Response } from 'express';
-import { ApiError } from "../common/ApiError";
-import { ApiResponse } from "../common/ApiResponse";
-import { apiLogger, logApiError } from "../Log/Logger";
-import { validateItem } from "../common/ValidateItem";
+import { Movie } from '../../database/entity/Movie';
+import { MovieService } from '../../database/service/MovieService';
+import { Request, Response } from 'express';
+import { ApiError } from '../common/ApiError';
+import { ApiResponse } from '../common/ApiResponse';
+import { apiLogger, logApiError } from '../Log/Logger';
+import { validateItem } from '../common/ValidateItem';
 
 const service = new MovieService();
 
@@ -32,7 +32,7 @@ export async function one(req: Request, res: Response): Promise<void> {
       data: {
         error: apiError,
       },
-    }
+    };
 
     logApiError(apiError);
 
@@ -91,7 +91,7 @@ export async function update(req: Request, res: Response): Promise<void> {
     res.statusCode = 200;
     res.send(apiResponse);
   } catch (err) {
-    const errMessage = `unable to update an item: ${ item.constructor.name }, with id: ${id}`;
+    const errMessage = `unable to update an item: ${item.constructor.name}, with id: ${id}`;
     const apiErrorResponse: ApiResponse = {
       message: errMessage,
       data: {
@@ -99,7 +99,7 @@ export async function update(req: Request, res: Response): Promise<void> {
       },
     };
 
-    apiLogger.error(errMessage, { err })
+    apiLogger.error(errMessage, { err });
 
     res.statusCode = 400;
     res.send(apiErrorResponse);
@@ -121,7 +121,7 @@ export async function remove(req: Request, res: Response): Promise<void> {
       message: errMessage,
       data: {
         error: apiError,
-      }
+      },
     };
 
     logApiError(apiError);

@@ -1,5 +1,5 @@
-import { BaseEntity } from "typeorm";
-import { IBaseRepository } from "../repository/BaseRepository";
+import { BaseEntity } from 'typeorm';
+import { IBaseRepository } from '../repository/BaseRepository';
 
 export interface IBaseService<Entity extends BaseEntity> {
   getAll(): Promise<Entity[]>;
@@ -9,7 +9,9 @@ export interface IBaseService<Entity extends BaseEntity> {
   remove(id: number): Promise<boolean>;
 }
 
-export abstract class BaseService<Entity extends BaseEntity> implements IBaseService<Entity> {
+export abstract class BaseService<Entity extends BaseEntity>
+  implements IBaseService<Entity>
+{
   constructor(protected repository: IBaseRepository<Entity>) {}
 
   async getAll(): Promise<Entity[]> {

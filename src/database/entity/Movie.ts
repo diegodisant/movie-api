@@ -4,16 +4,10 @@ import {
   Column,
   BaseEntity,
   CreateDateColumn,
-  UpdateDateColumn
+  UpdateDateColumn,
 } from 'typeorm';
 
-import {
- IsInt,
- IsString,
- IsArray,
- IsOptional,
- Length
-} from 'class-validator';
+import { IsInt, IsString, IsArray, IsOptional, Length } from 'class-validator';
 
 @Entity()
 export class Movie extends BaseEntity {
@@ -37,11 +31,11 @@ export class Movie extends BaseEntity {
   @IsOptional()
   release_year?: string;
 
-  @Column({ type: 'text', array: true})
+  @Column({ type: 'text', array: true })
   @IsArray()
   actors: string[];
 
-  @CreateDateColumn({ name: 'created_at'})
+  @CreateDateColumn({ name: 'created_at' })
   createdAt: Date;
 
   @UpdateDateColumn({ name: 'updated_at' })
