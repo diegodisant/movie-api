@@ -1,0 +1,5 @@
+#!/bin/sh
+
+npm run lint:check && npm run format
+
+exec 1>2

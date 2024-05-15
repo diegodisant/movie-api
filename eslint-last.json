@@ -4,6 +4,10 @@
     "es6": true,
     "jest": true
   },
+  "ignorePatterns": [
+    "/node_modules",
+    "/build"
+  ],
   "root": true,
   "parser": "@typescript-eslint/parser",
   "plugins": ["@typescript-eslint"],

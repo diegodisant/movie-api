@@ -1,4 +1,4 @@
 export interface ApiResponse {
   message: string;
-  data?: Object;
+  data?: object;
 }

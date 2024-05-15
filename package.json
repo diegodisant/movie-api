@@ -2,14 +2,15 @@
   "name": "movie-api",
   "version": "1.0.0",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "dev": "nodemon ./index.ts",
     "build": "rimraf ./build && tsc",
     "test": "jest --passWithNoTests",
     "test:at": "run_test_at() { jest --testNamePattern=$1; }; run_test_at ",
+    "lint": "eslint --fix .",
     "format": "prettier --ignore-path .gitignore --write \"**/*.+(ts)\"",
-    "lint": "eslint --fix --ext .ts,.test.ts .",
-    "lint:check": "eslint --fix-dry-run --ext .ts, .test.ts .",
+    "lint:check": "eslint --fix-dry-run .",
     "typeorm:cli": "ts-node ./node_modules/typeorm/cli",
     "db:migrations": "npm run typeorm:cli -- migration:run -d ./data-source.ts",
     "db:revert-migrations": "npm run typeorm:cli -- migration:revert -d ./data-source.ts",
@@ -24,23 +25,24 @@
     "express": "^4.19.2",
     "morgan": "^1.10.0",
     "serverless-http": "^3.2.0",
-    "type-graphql": "^2.0.0-rc.1",
     "typedi": "^0.10.0",
     "typeorm": "^0.3.20",
     "winston": "^3.13.0"
   },
   "devDependencies": {
+    "@eslint/js": "^9.2.0",
     "@types/express": "^4.17.21",
     "@types/morgan": "^1.9.9",
     "cross-env": "^7.0.3",
     "dotenv": "^16.4.5",
-    "eslint": "^9.2.0",
+    "eslint": "^8.57.0",
     "jest": "^29.7.0",
     "nodemon": "^3.1.0",
     "pg": "^8.11.5",
     "prettier": "^3.2.5",
     "ts-jest": "^29.1.2",
     "ts-node": "^10.9.2",
-    "typescript": "^5.4.5"
+    "typescript": "^5.4.5",
+    "typescript-eslint": "^7.9.0"
   }
 }
