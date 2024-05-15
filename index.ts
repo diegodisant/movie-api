@@ -6,8 +6,8 @@ import apiDbSource from './data-source';
 import serverless from 'serverless-http';
 import { apiLogger } from './src/api/Log/Logger';
 
-// inithialize database
-apiDbSource.initialize()
+apiDbSource
+  .initialize()
   .then(() => {
     apiLogger.info('database connected successfuly');
   })
@@ -31,4 +31,4 @@ api.listen(port, () => {
   apiLogger.info(`Movie API is running at port: ${port}`);
 });
 
-module.exports.handler = serverless(api);
+export default serverless(api);
