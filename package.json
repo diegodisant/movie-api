@@ -14,7 +14,8 @@
     "typeorm:cli": "ts-node ./node_modules/typeorm/cli",
     "db:migrations": "npm run typeorm:cli -- migration:run -d ./data-source.ts",
     "db:revert-migrations": "npm run typeorm:cli -- migration:revert -d ./data-source.ts",
-    "db:add-migration": "run_add_migration() { npm run typeorm:cli -- migration:create ./src/database/migrations/$1; }; run_add_migration"
+    "db:add-migration": "run_add_migration() { npm run typeorm:cli -- migration:create ./src/database/migrations/$1; }; run_add_migration",
+    "git:hooks": "git config core.hooksPath .githooks"
   },
   "keywords": [],
   "author": "",
