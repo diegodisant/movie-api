@@ -2,4 +2,4 @@
 
 npm run lint:check && npm run format
 
-exec 1>2
+exec 1>&2
